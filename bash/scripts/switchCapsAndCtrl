@@ -1,2 +1,2 @@
-xmodmap remap.txt
+xmodmap ~/scripts/remap.txt
 

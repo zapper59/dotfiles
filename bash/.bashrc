@@ -11,7 +11,7 @@ unalias -a
 alias src='. ~/.bash_profile'
 alias checkjar='find . "(" -name "*.jar" -o -name "*.zip" ")" -exec zip -T -q {} ";"'
 alias build='showbuildservers | grep Richardson'
-alias vi='vim'
+alias vim='vi'
 
 #Eclipse Aliases
 #alias eclipse="/nobackup/bririche/eclipse/eclipse -data /nobackup/bririche/workspace -vm /auto/cmtools/i686-pc-linux-gnu/jdk/jdk1.7.0_76/bin &>/dev/null 2>&1 &"
