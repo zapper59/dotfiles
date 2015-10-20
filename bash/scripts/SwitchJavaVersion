@@ -1,0 +1,27 @@
+#!bin/bash -x
+
+tempPath=$PATH
+arr=$(echo $tempPath | tr ":" "\n")
+#java8path="/nobackup/bririche/java/jdk1.8.0_25"
+java8path="/usr/lib/jvm/java-8-oracle"
+java7path="/usr/lib/jvm/java-7-oracle"
+tempPath=""
+
+for x in $arr
+do
+	if [ $x != $JAVA_HOME"/bin" ] && [ $x != $JAVA_HOME ]; then
+		tempPath=$tempPath$x:
+	fi
+done
+
+if [ ${JAVA_HOME} = ${java7path} ]; then
+	echo "switch to 8"
+	export JAVA_HOME=$java8path
+else if [ ${JAVA_HOME} = ${java8path} ]; then
+	echo "switch to 7"
+	export JAVA_HOME=$java7path
+fi
+fi
+tempPath=$JAVA_HOME"/bin:"$tempPath
+PATH=$tempPath
+echo $JAVA_HOME

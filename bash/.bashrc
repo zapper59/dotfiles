@@ -105,3 +105,4 @@ alias listPrinters="vim /lusr/share/etc/printcap"
 alias tmux="unset bashrcrun && tmux"
 
 alias javadecompile="java -jar ~/projects/jd-core-java/build/libs/jd-core-java-1.2.jar"
+alias switchcc="source ~/scripts/switchCapsAndCtrl"
