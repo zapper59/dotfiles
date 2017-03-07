@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/v/filer4b/v38q001/bririche/temp/portforward/org/enterprisepower/net'
-let g:netrw_dirhist_2='/v/filer4b/v38q001/bririche/temp/portforward/org/enterprisepower/net/portforward'
-let g:netrw_dirhist_3='/v/filer4b/v38q001/bririche'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/v/filer4b/v38q001/bririche/projects/oop2017/collatz'
+let g:netrw_dirhist_2='/v/filer4b/v38q001/bririche/projects/cs371p'
+let g:netrw_dirhist_3='/v/filer4b/v38q001/bririche/projects/cs371p/projects'
+let g:netrw_dirhist_4='/v/filer4b/v38q001/bririche/projects/cs371p/projects/collatz'
+let g:netrw_dirhist_5='/v/filer4b/v38q001/bririche/dotfiles/.git'

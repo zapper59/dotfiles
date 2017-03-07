@@ -89,7 +89,7 @@ function pathRemove() {
 #############################################################
 
 #Remove any cruft that may already be on the path
-PATH=/bin:/usr/bin:/usr/local/bin:/usr/cisco/bin
+PATH=/bin:/usr/bin:/usr/local/bin:/usr/cisco/bin:/usr/games
 
 pathPrepend "$NODEJS_HOME/bin"
 pathPrepend "$JMETER_HOME/bin"
@@ -121,5 +121,10 @@ if [ -z ${bashrcrun} ]; then
 	if [[ $- == *i* ]]; then
 		echo "Hello Brian"
 	fi
-	source .bashrc
+	source ~/.bashrc
 fi
+
+echo $DISPLAY
+#PINTOS!
+export PATH=/lusr/opt/pintos/:/lusr/opt/bochs-2.2.6-pintos/bin/:$PATH
+#export DISPLAY=localhost:13.0

@@ -1,5 +1,6 @@
 "Added for https://github.com/sentientmachine/erics_vim_syntax_and_color_highlighting
-"set background=dark
+
+set background=dark
 filetype on
 filetype plugin indent on
 
@@ -56,7 +57,9 @@ set mouse=a
 highlight ExtraWhitespace ctermbg=darkred guibg=#382424
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
-colorscheme elflord
+"colorscheme solarized
+"colorscheme desert
+colorscheme monokai
 
 imap jj <ESC>
 cmap jj <ESC>
@@ -107,4 +110,21 @@ au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
 
 cmap sudow w !sudo tee % >/dev/null
+
+
+" Currently using spaces instead of tabs
+set expandtab
+set shiftwidth=2
+
+" TabToggle command from vim wikia
+function TabSwitch()
+   if &expandtab
+      set noexpandtab
+   else
+      set expandtab
+   endif
+   echo &expandtab
+endfunction
+map <F9> mz:execute TabSwitch()<CR>'z
+map! <F9> <C-o>:execute TabSwitch()<CR>
 

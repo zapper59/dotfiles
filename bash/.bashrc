@@ -1,17 +1,21 @@
-umask 077
-
-
 #!/bin/bash
 
-#Remove any aliases that may have been already created
+if [[ $- != *i* ]]; then return; fi
+echo "Hello from .bashrc"
+
+umask 077
+
+export bashrcrun="true"
 . ~/.bash_profile
 
+#Remove any aliases that may have been already created
 unalias -a
 
 alias src='. ~/.bash_profile'
 alias checkjar='find . "(" -name "*.jar" -o -name "*.zip" ")" -exec zip -T -q {} ";"'
 alias build='showbuildservers | grep Richardson'
-alias vim='vi'
+alias vim='vim -X'
+alias vi='vim'
 
 #Eclipse Aliases
 #alias eclipse="/nobackup/bririche/eclipse/eclipse -data /nobackup/bririche/workspace -vm /auto/cmtools/i686-pc-linux-gnu/jdk/jdk1.7.0_76/bin &>/dev/null 2>&1 &"
@@ -96,6 +100,11 @@ alias localrepo='source ~/scripts/localrepo'
 alias remoterepo='source ~/scripts/remoterepo'
 
 source ~/scripts/bash_ps1
+if [ -z ${capsswitched} ]; then
+	export capsswitched="true"
+	#source ~/scripts/switchCapsAndCtrl
+fi
+
 
 alias sbuild="/nobackup/bririche/java/JavaFXSceneBuilder2.0/JavaFXSceneBuilder2.0 &"
 
