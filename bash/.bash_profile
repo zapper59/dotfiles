@@ -27,7 +27,8 @@ export ELASTICSEARCH_HOME="/nobackup/bririche/bin/elasticsearch-1.2.1"
 export TOMCAT_MANAGER_URL=http://rcdn6-vm63-54:8080/manager #localhost:8080
 export TOMCAT_MANAGER_USER=tomcat
 export TOMCAT_MANAGER_PASSWORD=tomcat
-export EDITOR="vim"
+export EDITOR='notepad++.exe'
+export VISUAL='~/scripts/notepad.sh'
 export NODEJS="$NODEJS_HOME/bin"
 
 export CCASE_HOST_TYPE=auto
@@ -63,7 +64,7 @@ export VOSMFIBUILDDIR=/view/bririche-cc_mainline-cct-vos/vob/vos/Common/build #r
 export MANPATH=\
 /usr/share/man:\
 /usr/atria/doc/man:\
-/usr/cisco/man:\
+#/usr/cisco/man:\
 /usr/local/share/man:\
 /usr/X11R6/man:\
 /usr/local/man:\
@@ -93,7 +94,8 @@ function pathRemove() {
 #############################################################
 
 #Remove any cruft that may already be on the path
-PATH=$PATH:/bin:/usr/bin:/usr/local/bin:/usr/cisco/bin
+PATH=$PATH:/bin:/usr/bin:/usr/local/bin
+#/usr/cisco/bin
 
 pathPrepend "$NODEJS_HOME/bin"
 pathPrepend "$JMETER_HOME/bin"

@@ -22,6 +22,7 @@ alias vimrc='vim ~/.vimrc'
 alias vib='vim ~/.bash_profile'
 alias vibrc='vim ~/.bashrc'
 #alias grep='grep --color=auto'
+alias grepsearch='grep -rni'
 alias tf='tail -f'
 alias push='pushd .'
 alias pop='popd'
@@ -75,7 +76,7 @@ alias sandbox='sandbox@bastion-util-01-his-public-direct-600.huron-alpha.com'
 alias localrepo='source ~/scripts/localrepo'
 alias remoterepo='source ~/scripts/remoterepo'
 
-#source ~/scripts/bash_ps1
+source ~/scripts/bash_ps1
 
 alias sbuild="/nobackup/bririche/java/JavaFXSceneBuilder2.0/JavaFXSceneBuilder2.0 &"
 
@@ -91,3 +92,8 @@ alias nukegradle="gradle --refresh-dependencies clean cleaneclipse eclipse build
 echo "hello from bashrc"
 
 #alias clear="printf \"\033c\""
+
+alias python='C:\\Python27\python.exe'
+alias pow='powershell.exe'
+alias mkdir='mkdir -pv'
+set completion-ignore-case On
