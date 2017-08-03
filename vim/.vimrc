@@ -61,13 +61,6 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 "colorscheme desert
 colorscheme monokai
 
-imap jj <ESC>
-cmap jj <ESC>
-nmap <M-h> <C-w>h
-nmap <M-j> <C-w>j
-nmap <M-k> <C-w>k
-nmap <M-l> <C-w>l
-
 """" Toggle invisible characters
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
@@ -102,9 +95,23 @@ command! -nargs=1 Csv :call CSVH(<args>)
 set t_Co=256
 set list
 
+
+imap jj <ESC>
+"cmap jj <ESC>
+vmap <C-c> "+y
+nmap <M-h> <C-w>h
+nmap <M-j> <C-w>j
+nmap <M-k> <C-w>k
+nmap <M-l> <C-w>l
+
 nmap <C-a> ggvG$
 nmap <C-h> v0
 nmap <C-l> v$
+"nmap <C-s> :wa<Enter>
+"nmap <C-r> :so %<Enter>
+"nmap <C-w> :q<Enter>
+
+
 autocmd InsertLeave * redraw!
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
@@ -128,3 +135,7 @@ endfunction
 map <F9> mz:execute TabSwitch()<CR>'z
 map! <F9> <C-o>:execute TabSwitch()<CR>
 
+augroup myvimrchooks
+    au!
+    autocmd bufwritepost .vimrc source ~/.vimrc
+augroup END

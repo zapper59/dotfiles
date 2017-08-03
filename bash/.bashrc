@@ -94,6 +94,11 @@ echo "hello from bashrc"
 #alias clear="printf \"\033c\""
 
 alias python='C:\\Python27\python.exe'
-alias pow='powershell.exe'
+alias pow='cmd /C "start /MAX powershell.exe"'
 alias mkdir='mkdir -pv'
+alias open='notepad++.exe'
+alias fromhex='xxd -r -p'
+start() {
+  cmd /C "start $1"
+}
 set completion-ignore-case On

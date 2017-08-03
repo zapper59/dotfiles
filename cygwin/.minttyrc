@@ -1,0 +1,16 @@
+BoldAsFont=-1
+Transparency=medium
+CursorType=block
+Font=Consolas
+Locale=en_US
+Charset=ISO-8859-1
+Printer=Microsoft Print to PDF
+FontHeight=10
+Columns=271
+Rows=67
+FontWeight=400
+FontIsBold=no
+CtrlShiftShortcuts=no
+BackgroundColour=13,36,38
+ForegroundColour=173,192,197
+CursorColour=170,185,227
