@@ -78,6 +78,9 @@ On_IPurple="\[\033[10;95m\]"  # Purple
 On_ICyan="\[\033[0;106m\]"    # Cyan
 On_IWhite="\[\033[0;107m\]"   # White
 
+Yellow2="\[\033[38;5;191m\]"
+
+
 # Various variables you might want for your PS1 prompt instead
 Time12h="\T"
 Time12a="\@"
@@ -85,6 +88,7 @@ PathShort="\w"
 PathFull="\W"
 NewLine="\n"
 Jobs="\j"
+ExitStatus="\$?"
 
 fill="-"
 
@@ -130,10 +134,10 @@ if [ $? -eq 0 ]; then \
   else \
     # @5 - Changes to working tree
     echo "'$IRed'"$(__git_ps1 " {%s}"); \
-  fi) '$BYellow$PathShort$Color_Off'\$ "; \
+  fi) '$Yellow2$PathShort$Color_Off'\$ "; \
 else \
   # @2 - Prompt when not in GIT repo
-  echo "'$Yellow$PathShort$Color_Off'\$ "; \
+  echo "'$Yellow2$PathShort$Color_Off'\$ "; \
 fi)'
 
 #export VIEW_NAME=$(cc_pwv | grep -i "set view" | sed -e 's@Set view: \(.*\)@\1@')

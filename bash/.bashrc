@@ -70,6 +70,9 @@ alias gr='git pull --rebase'
 alias gp='gr && git push origin HEAD:refs/for/master --no-thin'
 alias gdraft='git pull --rebase && git push origin HEAD:refs/drafts/master --no-thin'
 alias gl='git log --pretty=oneline'
+#gl() {
+#  $( [ -z "$1" ] && git log --pretty=oneline -10 || git log --pretty=oneline $1 )
+#}
 
 alias sandbox='sandbox@bastion-util-01-his-public-direct-600.huron-alpha.com'
 
@@ -77,6 +80,8 @@ alias localrepo='source ~/scripts/localrepo'
 alias remoterepo='source ~/scripts/remoterepo'
 
 source ~/scripts/bash_ps1
+source ~/scripts/.git-completion.bash
+#source ~/scripts/bash_ps1_2
 
 alias sbuild="/nobackup/bririche/java/JavaFXSceneBuilder2.0/JavaFXSceneBuilder2.0 &"
 
@@ -94,11 +99,19 @@ echo "hello from bashrc"
 #alias clear="printf \"\033c\""
 
 alias python='C:\\Python27\python.exe'
-alias pow='cmd /C "start /MAX powershell.exe"'
-alias mkdir='mkdir -pv'
-alias open='notepad++.exe'
-alias fromhex='xxd -r -p'
-start() {
-  cmd /C "start $1"
+alias start='cygstart'
+alias open='cygstart'
+pow() {
+  if [ -z "$1" ]
+  then
+    cygstart powershell.exe -NoExit
+  else
+    cygstart powershell.exe -NoExit -Command $1
+  fi
 }
+alias mkdir='mkdir -pv'
+alias fromhex='xxd -r -p'
+#start() {
+#  cmd /C "start $(cygpath.exe -w $1)"
+#}
 set completion-ignore-case On
