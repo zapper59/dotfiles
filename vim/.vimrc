@@ -44,7 +44,11 @@ set pastetoggle=<F2>
 set ic
 set hls
 "set nowrap"
+"set listchars=tab:Â».,eol:.,trail:Â¶
+"set listchars=tab:>.,eol:~,trail:!
 set listchars=tab:».,eol:¶,trail:·
+"set listchars=tab:fu,eol:~,trail:^
+
 autocmd BufRead * set textwidth=0
 autocmd BufNewFile,BufRead *.gradle setf groovy
 syntax on
@@ -61,6 +65,13 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 "colorscheme desert
 colorscheme monokai
 
+imap jj <ESC>
+cmap jj <ESC>
+nmap <M-h> <C-w>h
+nmap <M-j> <C-w>j
+nmap <M-k> <C-w>k
+nmap <M-l> <C-w>l
+ 
 """" Toggle invisible characters
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
@@ -95,23 +106,9 @@ command! -nargs=1 Csv :call CSVH(<args>)
 set t_Co=256
 set list
 
-
-imap jj <ESC>
-"cmap jj <ESC>
-vmap <C-c> "+y
-nmap <M-h> <C-w>h
-nmap <M-j> <C-w>j
-nmap <M-k> <C-w>k
-nmap <M-l> <C-w>l
-
 nmap <C-a> ggvG$
 nmap <C-h> v0
 nmap <C-l> v$
-"nmap <C-s> :wa<Enter>
-"nmap <C-r> :so %<Enter>
-"nmap <C-w> :q<Enter>
-
-
 autocmd InsertLeave * redraw!
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
@@ -122,6 +119,8 @@ cmap sudow w !sudo tee % >/dev/null
 " Currently using spaces instead of tabs
 set expandtab
 set shiftwidth=2
+
+au BufRead,BufNewFile,BufEnter ~/projects/378/** setlocal noexpandtab
 
 " TabToggle command from vim wikia
 function TabSwitch()
@@ -135,7 +134,4 @@ endfunction
 map <F9> mz:execute TabSwitch()<CR>'z
 map! <F9> <C-o>:execute TabSwitch()<CR>
 
-augroup myvimrchooks
-    au!
-    autocmd bufwritepost .vimrc source ~/.vimrc
-augroup END
+set noswapfile

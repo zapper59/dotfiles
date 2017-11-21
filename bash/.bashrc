@@ -1,10 +1,12 @@
 #!/bin/bash
 
 #This feels like a bad idea and will probably break things
-clear
+if [[ $- == *i* ]]; then
+  clear
+fi
 
 #Remove any aliases that may have been already created
-#. ~/.bash_profile
+. ~/.bash_profile
 
 unalias -a
 
@@ -21,8 +23,9 @@ alias soapui='exec /ws/bririche-rcd/bin/soapui/bin/soapui.sh &>/dev/null 2>&1 &'
 alias vimrc='vim ~/.vimrc'
 alias vib='vim ~/.bash_profile'
 alias vibrc='vim ~/.bashrc'
-#alias grep='grep --color=auto'
-alias grepsearch='grep -rni'
+alias grep='grep --color=auto'
+alias search='grep -niI --exclude *.o --exclude *.asm --exclude *.sym -r ./ -e'
+alias searchmore='grep -nir ./ -e'
 alias tf='tail -f'
 alias push='pushd .'
 alias pop='popd'
@@ -94,7 +97,9 @@ export PATH="${C_DRIVE}Program Files/netcat-1.11":$PATH
 
 alias nukegradle="gradle --refresh-dependencies clean cleaneclipse eclipse build"
 
-echo "hello from bashrc"
+if [[ $- == *i* ]]; then
+  echo "hello from bashrc"
+fi
 
 #alias clear="printf \"\033c\""
 
@@ -114,4 +119,5 @@ alias fromhex='xxd -r -p'
 #start() {
 #  cmd /C "start $(cygpath.exe -w $1)"
 #}
+alias sublime_text='vim'
 set completion-ignore-case On
