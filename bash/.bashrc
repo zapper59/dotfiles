@@ -1,12 +1,13 @@
 #!/bin/bash
 
+#Remove any aliases that may have been already created
+. ~/.bash_profile
+
 #This feels like a bad idea and will probably break things
 if [[ $- == *i* ]]; then
   clear
 fi
 
-#Remove any aliases that may have been already created
-. ~/.bash_profile
 
 unalias -a
 
@@ -45,10 +46,13 @@ alias up10='cd ../../../../../../../../../..'
 
 #SSH Aliases
 alias sshpi='ssh pi@64.101.154.133'
+#alias sshvm='ssh bricher@192.168.2.137'
+alias sshvm='ssh bricher@10.116.202.107'
 
 #ls color
-alias ls='ls --color -a'
-alias sl='ls --color'
+alias ls='ls -G -a'
+#alias ls='ls -a'
+alias sl='ls -G'
 alias ll="ls -lah"
 alias la="ll"
 
