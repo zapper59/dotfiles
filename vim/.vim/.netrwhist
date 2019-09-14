@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/v/filer4b/v38q001/bririche/projects/oop2017/collatz'
-let g:netrw_dirhist_2='/v/filer4b/v38q001/bririche/projects/cs371p'
-let g:netrw_dirhist_3='/v/filer4b/v38q001/bririche/projects/cs371p/projects'
-let g:netrw_dirhist_4='/v/filer4b/v38q001/bririche/projects/cs371p/projects/collatz'
-let g:netrw_dirhist_5='/v/filer4b/v38q001/bririche/dotfiles/.git'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/bricher/src/build/debug/fs/lease'
+let g:netrw_dirhist_2='/home/bricher/src/fs/lease'
+let g:netrw_dirhist_3='/home/bricher/src/fs'
+let g:netrw_dirhist_4='/home/bricher/src/tools/cert/test_arms'
+let g:netrw_dirhist_5='/home/bricher/src/.hg/patches'
+let g:netrw_dirhist_6='/home/bricher/src'
+let g:netrw_dirhist_7='/home/bricher'

@@ -1,0 +1,82 @@
+"
+" Philip Taron's .vimrc
+"
+"
+source ~/.vim/bundles
+
+set nocompatible       " Use Vim settings, rather than Vi settings
+
+set scrolloff=10       " Maintain 10 lines on screen
+set history=4000
+set laststatus=2       " Always display the status line
+set showcmd            " Display incomplete commands
+set noswapfile         " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set nobackup
+set nowritebackup
+
+set wildmenu           " Display all the options when autocompleting
+set number             " Always display line numbers
+
+set ignorecase         " Ignore case by default when searching
+set incsearch          " Do incremental searching
+set hlsearch           " Automatically highlight search entries
+
+set autoread           " When a file changes, re-read it.
+set autowrite          " Automatically :write before running commands
+set lazyredraw         " Don't redraw unless you need to
+
+set tabstop=4          " Tab characters are always 4 characters away
+set shiftwidth=4       " A shiftwidth (indent) is 4 characters away
+set softtabstop=4      " If inserting spaces, 4 spaces are right
+set smarttab           " Use shiftwidth is the sole setting for tabs
+set expandtab          " Use spaces instead of tabs
+
+set textwidth=80       " Use 80 character-wide columns by default
+set colorcolumn=+1     " Set a color column at textwidth + 1
+
+set path=,build/gen,   " Find source files in . and build/gen
+set makeprg=build      " build with build
+
+" Backspace and cursor keys wrap to previous/next line
+set backspace=indent,eol,start
+
+let c_no_curly_error = 1
+syntax on
+
+set spell spelllang=en_us    
+
+py3 from powerline.vim import setup as powerline_setup
+py3 powerline_setup()
+py3 del powerline_setup
+
+filetype plugin indent on
+colorscheme ron
+
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
+
+set whichwrap=<,>,[,],b,s " must be set after filetype
+
+" Use rg exclusively
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+    nnoremap <Leader>f :Rg<CR>
+endif
+
+" Use clang-format and rustfmt
+noremap <F3> :Autoformat<CR>
+let g:rustfmt_autosave = 1
+
+" Build everything
+noremap <F11> :Make<CR>
+
+" Build the file
+noremap <F12> :Make build/debug/%:r.c.bc<CR>
+noremap <S-F12> :Make build/debug/%.list<CR>
